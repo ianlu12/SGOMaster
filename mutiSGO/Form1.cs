@@ -59,7 +59,7 @@ namespace mutiSGO
         {
             if (button1.Enabled)
             {
-                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();},11000);");
+                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(power>120  && hp> 120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);");
 
             }
             button1.Enabled = false;
@@ -69,7 +69,7 @@ namespace mutiSGO
         {
             if (button3.Enabled)
             {
-                await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();},11000);");
+                await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(power>120  && hp> 120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);");
             }
             button3.Enabled = false;
         }

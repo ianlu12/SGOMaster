@@ -37,9 +37,9 @@ namespace mutiSGO
             this.webView22 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.UITweakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UITweakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.teToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webView22)).BeginInit();
@@ -64,15 +64,15 @@ namespace mutiSGO
             this.button1.Location = new System.Drawing.Point(4, 35);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.Size = new System.Drawing.Size(120, 29);
             this.button1.TabIndex = 2;
-            this.button1.Text = "自動戰鬥";
+            this.button1.Text = "自動戰鬥休息";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(112, 35);
+            this.button2.Location = new System.Drawing.Point(132, 35);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 29);
@@ -86,9 +86,9 @@ namespace mutiSGO
             this.button3.Location = new System.Drawing.Point(503, 35);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 29);
+            this.button3.Size = new System.Drawing.Size(120, 29);
             this.button3.TabIndex = 4;
-            this.button3.Text = "自動戰鬥";
+            this.button3.Text = "自動戰鬥休息";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -107,7 +107,7 @@ namespace mutiSGO
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(611, 35);
+            this.button4.Location = new System.Drawing.Point(631, 35);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 29);
@@ -123,9 +123,26 @@ namespace mutiSGO
             this.設定ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(999, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1253, 27);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 設定ToolStripMenuItem
+            // 
+            this.設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UITweakToolStripMenuItem});
+            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
+            this.設定ToolStripMenuItem.Text = "設定";
+            // 
+            // UITweakToolStripMenuItem
+            // 
+            this.UITweakToolStripMenuItem.Checked = true;
+            this.UITweakToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.UITweakToolStripMenuItem.Name = "UITweakToolStripMenuItem";
+            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.UITweakToolStripMenuItem.Text = "啟用介面優化插件";
+            this.UITweakToolStripMenuItem.Click += new System.EventHandler(this.UITweakToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -134,28 +151,16 @@ namespace mutiSGO
             this.toolStripMenuItem1.Text = "設定";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // UITweakToolStripMenuItem
+            // teToolStripMenuItem
             // 
-            this.UITweakToolStripMenuItem.Checked = true;
-            this.UITweakToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.UITweakToolStripMenuItem.Name = "UITweakToolStripMenuItem";
-            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.UITweakToolStripMenuItem.Text = "啟用介面優化插件";
-            this.UITweakToolStripMenuItem.Click += new System.EventHandler(this.UITweakToolStripMenuItem_Click);
-            // 
-            // 設定ToolStripMenuItem
-            // 
-            this.設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UITweakToolStripMenuItem});
-            this.設定ToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
-            this.設定ToolStripMenuItem.Text = "設定";
+            this.teToolStripMenuItem.Name = "teToolStripMenuItem";
+            this.teToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 840);
+            this.ClientSize = new System.Drawing.Size(1253, 1001);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.webView22);
             this.Controls.Add(this.button3);
