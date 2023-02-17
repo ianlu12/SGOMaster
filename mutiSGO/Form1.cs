@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace mutiSGO
 {
     public partial class Form1 : Form
     {
+        public int slot = 2;
+        public string UITweakScript = File.ReadAllText(@".\script.js");
         public Form1()
         {
             InitializeComponent();
@@ -37,10 +40,14 @@ namespace mutiSGO
 
         private void Form1_Resize(object sender, EventArgs e)
         {
-            var viewHeight = this.Height - 75;
+            WebViewResize();
+        }
+        public void WebViewResize()
+        {
+            var viewHeight = this.Height - 95;
             this.webView21.Height = viewHeight;
             this.webView22.Height = viewHeight;
-            var viewWidth = (this.Width - 11 * 2 - 5 * (2 - 1)) / 2;
+            var viewWidth = (this.Width - 11 * this.slot - 5 * (this.slot - 1)) / 2;
             this.webView21.Width = viewWidth;
             webView22.Left = this.webView21.Right + 5;
             this.webView22.Width = viewWidth;
@@ -79,6 +86,11 @@ namespace mutiSGO
 
         private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            if (UITweakToolStripMenuItem.Checked)
+            {
+                webView21.CoreWebView2.ExecuteScriptAsync(UITweakScript);
+
+            }
             if (!button1.Enabled)
             {
                 button1.Enabled = true;
@@ -88,10 +100,37 @@ namespace mutiSGO
 
         private void webView22_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            if (UITweakToolStripMenuItem.Checked)
+            {
+            webView22.CoreWebView2.ExecuteScriptAsync(UITweakScript);
+
+            }
             if (!button3.Enabled)
             {
                 button3.Enabled = true;
             }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            WebViewResize();
+        }
+
+        private void UITweakToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UITweakToolStripMenuItem.Checked = !UITweakToolStripMenuItem.Checked;
+            webView21.Reload();
+            webView22.Reload();
         }
     }
 }
