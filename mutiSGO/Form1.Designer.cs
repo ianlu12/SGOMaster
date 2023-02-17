@@ -37,8 +37,9 @@ namespace mutiSGO
             this.webView22 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UITweakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GrayscaleModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.teToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
@@ -120,29 +121,37 @@ namespace mutiSGO
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.設定ToolStripMenuItem});
+            this.SettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1253, 27);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // 設定ToolStripMenuItem
+            // SettingToolStripMenuItem
             // 
-            this.設定ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.UITweakToolStripMenuItem});
-            this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
-            this.設定ToolStripMenuItem.Text = "設定";
+            this.SettingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UITweakToolStripMenuItem,
+            this.GrayscaleModeToolStripMenuItem});
+            this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
+            this.SettingToolStripMenuItem.Text = "設定";
             // 
             // UITweakToolStripMenuItem
             // 
             this.UITweakToolStripMenuItem.Checked = true;
             this.UITweakToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UITweakToolStripMenuItem.Name = "UITweakToolStripMenuItem";
-            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
+            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.UITweakToolStripMenuItem.Text = "啟用介面優化插件";
             this.UITweakToolStripMenuItem.Click += new System.EventHandler(this.UITweakToolStripMenuItem_Click);
+            // 
+            // GrayscaleModeToolStripMenuItem
+            // 
+            this.GrayscaleModeToolStripMenuItem.Name = "GrayscaleModeToolStripMenuItem";
+            this.GrayscaleModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.GrayscaleModeToolStripMenuItem.Text = "上班模式";
+            this.GrayscaleModeToolStripMenuItem.Click += new System.EventHandler(this.GrayscaleModeToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -172,7 +181,7 @@ namespace mutiSGO
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "mutiSGO";
+            this.Text = "mutiSGO v0.2";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
@@ -195,8 +204,9 @@ namespace mutiSGO
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UITweakToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem GrayscaleModeToolStripMenuItem;
     }
 }
 

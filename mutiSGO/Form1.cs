@@ -89,7 +89,10 @@ namespace mutiSGO
             if (UITweakToolStripMenuItem.Checked)
             {
                 webView21.CoreWebView2.ExecuteScriptAsync(UITweakScript);
-
+            }
+            if (GrayscaleModeToolStripMenuItem.Checked)
+            {
+                webView21.CoreWebView2.ExecuteScriptAsync(@"document.getElementsByTagName('html')[0].style.filter = 'invert(1) grayscale(1)';");
             }
             if (!button1.Enabled)
             {
@@ -102,8 +105,11 @@ namespace mutiSGO
         {
             if (UITweakToolStripMenuItem.Checked)
             {
-            webView22.CoreWebView2.ExecuteScriptAsync(UITweakScript);
-
+                webView22.CoreWebView2.ExecuteScriptAsync(UITweakScript);
+            }
+            if (GrayscaleModeToolStripMenuItem.Checked)
+            {
+                webView22.CoreWebView2.ExecuteScriptAsync(@"document.getElementsByTagName('html')[0].style.filter = 'invert(1) grayscale(1)';");
             }
             if (!button3.Enabled)
             {
@@ -129,6 +135,13 @@ namespace mutiSGO
         private void UITweakToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UITweakToolStripMenuItem.Checked = !UITweakToolStripMenuItem.Checked;
+            webView21.Reload();
+            webView22.Reload();
+        }
+
+        private void GrayscaleModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrayscaleModeToolStripMenuItem.Checked = !GrayscaleModeToolStripMenuItem.Checked;
             webView21.Reload();
             webView22.Reload();
         }
