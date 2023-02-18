@@ -15,6 +15,7 @@ namespace mutiSGO
     {
         public int slot = 2;
         public string UITweakScript = File.ReadAllText(@".\script.js");
+        public string autoFight = "setInterval(function(){var hp=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(document.getElementsByClassName('css-1riv80w') [0].childNodes[1].childNodes[1].data == '（可完成）'){document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();}if(power > 120 && hp >120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);";
         public Form1()
         {
             InitializeComponent();
@@ -59,8 +60,7 @@ namespace mutiSGO
         {
             if (button1.Enabled)
             {
-                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(power>120  && hp> 120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);");
-
+                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
             }
             button1.Enabled = false;
         }
@@ -69,7 +69,7 @@ namespace mutiSGO
         {
             if (button3.Enabled)
             {
-                await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:setInterval(function(){var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(power>120  && hp> 120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);");
+                await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
             }
             button3.Enabled = false;
         }
