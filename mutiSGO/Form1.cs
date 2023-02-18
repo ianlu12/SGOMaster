@@ -15,6 +15,7 @@ namespace mutiSGO
     {
         public int slot = 2;
         public string UITweakScript = File.ReadAllText(@".\script.js");
+        public string autoScript = File.ReadAllText(@".\sgoAuto.js");
         public static int limitHp = 120;
         public static int limitPower = 120;
         public static int floor = 0;
@@ -97,6 +98,7 @@ namespace mutiSGO
 
         private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            webView21.CoreWebView2.ExecuteScriptAsync(autoScript);
             if (UITweakToolStripMenuItem.Checked)
             {
                 webView21.CoreWebView2.ExecuteScriptAsync(UITweakScript);
@@ -113,6 +115,7 @@ namespace mutiSGO
 
         private void webView22_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            webView22.CoreWebView2.ExecuteScriptAsync(autoScript);
             if (UITweakToolStripMenuItem.Checked)
             {
                 webView22.CoreWebView2.ExecuteScriptAsync(UITweakScript);
