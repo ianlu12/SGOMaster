@@ -15,8 +15,12 @@ namespace mutiSGO
     {
         public int slot = 2;
         public string UITweakScript = File.ReadAllText(@".\script.js");
-        public string autoFight = "setInterval(function(){var hp=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(document.getElementsByClassName('css-1riv80w') [0].childNodes[1].childNodes[1].data == '（可完成）'){document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();}if(power > 120 && hp >120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);";
-        public string autoForward = "setInterval(function(){var hp=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(document.getElementsByClassName('css-1riv80w') [0].childNodes[1].childNodes[1].data == '（可完成）'){document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();}if(power > 120 && hp >120){document.getElementsByClassName('css-1myfyhp')[0].children[0].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);";
+        public static int limitHp = 120;
+        public static int limitPower = 120;
+        public static int floor = 0;
+        public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitPower + "," + floor + ")},11000)";
+        public string autoForward = "setInterval(function(){autoForward()},11000);";
+
         public Form1()
         {
             InitializeComponent();
@@ -63,7 +67,9 @@ namespace mutiSGO
         {
             if (btnAutoFight1.Enabled)
             {
-                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
+                //await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
+                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:"+ autoFight);
+
             }
             btnAutoFight1.Enabled = false;
             btnAutoForward1.Enabled = false;
