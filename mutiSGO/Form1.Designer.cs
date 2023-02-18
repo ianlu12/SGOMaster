@@ -56,18 +56,20 @@ namespace mutiSGO
             this.webView21.AllowExternalDrop = true;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Location = new System.Drawing.Point(3, 52);
+            this.webView21.Location = new System.Drawing.Point(6, 91);
+            this.webView21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(368, 615);
+            this.webView21.Size = new System.Drawing.Size(675, 1076);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
             // 
             // btnAutoFight1
             // 
-            this.btnAutoFight1.Location = new System.Drawing.Point(3, 28);
+            this.btnAutoFight1.Location = new System.Drawing.Point(6, 49);
+            this.btnAutoFight1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoFight1.Name = "btnAutoFight1";
-            this.btnAutoFight1.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoFight1.Size = new System.Drawing.Size(165, 40);
             this.btnAutoFight1.TabIndex = 2;
             this.btnAutoFight1.Text = "自動戰鬥";
             this.btnAutoFight1.UseVisualStyleBackColor = true;
@@ -75,9 +77,10 @@ namespace mutiSGO
             // 
             // btnLogout1
             // 
-            this.btnLogout1.Location = new System.Drawing.Point(291, 28);
+            this.btnLogout1.Location = new System.Drawing.Point(534, 49);
+            this.btnLogout1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLogout1.Name = "btnLogout1";
-            this.btnLogout1.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout1.Size = new System.Drawing.Size(138, 40);
             this.btnLogout1.TabIndex = 3;
             this.btnLogout1.Text = "登出";
             this.btnLogout1.UseVisualStyleBackColor = true;
@@ -85,9 +88,10 @@ namespace mutiSGO
             // 
             // btnAutoFight2
             // 
-            this.btnAutoFight2.Location = new System.Drawing.Point(377, 28);
+            this.btnAutoFight2.Location = new System.Drawing.Point(691, 49);
+            this.btnAutoFight2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoFight2.Name = "btnAutoFight2";
-            this.btnAutoFight2.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoFight2.Size = new System.Drawing.Size(165, 40);
             this.btnAutoFight2.TabIndex = 4;
             this.btnAutoFight2.Text = "自動戰鬥";
             this.btnAutoFight2.UseVisualStyleBackColor = true;
@@ -98,18 +102,20 @@ namespace mutiSGO
             this.webView22.AllowExternalDrop = true;
             this.webView22.CreationProperties = null;
             this.webView22.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView22.Location = new System.Drawing.Point(377, 52);
+            this.webView22.Location = new System.Drawing.Point(691, 91);
+            this.webView22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.webView22.Name = "webView22";
-            this.webView22.Size = new System.Drawing.Size(368, 615);
+            this.webView22.Size = new System.Drawing.Size(675, 1076);
             this.webView22.TabIndex = 5;
             this.webView22.ZoomFactor = 1D;
             this.webView22.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView22_NavigationCompleted);
             // 
             // btnLogout2
             // 
-            this.btnLogout2.Location = new System.Drawing.Point(665, 28);
+            this.btnLogout2.Location = new System.Drawing.Point(1219, 49);
+            this.btnLogout2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLogout2.Name = "btnLogout2";
-            this.btnLogout2.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout2.Size = new System.Drawing.Size(138, 40);
             this.btnLogout2.TabIndex = 6;
             this.btnLogout2.Text = "登出";
             this.btnLogout2.UseVisualStyleBackColor = true;
@@ -122,8 +128,8 @@ namespace mutiSGO
             this.SettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(940, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(1723, 38);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,7 +139,7 @@ namespace mutiSGO
             this.UITweakToolStripMenuItem,
             this.GrayscaleModeToolStripMenuItem});
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(72, 30);
             this.SettingToolStripMenuItem.Text = "設定";
             // 
             // UITweakToolStripMenuItem
@@ -141,14 +147,14 @@ namespace mutiSGO
             this.UITweakToolStripMenuItem.Checked = true;
             this.UITweakToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UITweakToolStripMenuItem.Name = "UITweakToolStripMenuItem";
-            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(297, 40);
             this.UITweakToolStripMenuItem.Text = "啟用介面優化插件";
             this.UITweakToolStripMenuItem.Click += new System.EventHandler(this.UITweakToolStripMenuItem_Click);
             // 
             // GrayscaleModeToolStripMenuItem
             // 
             this.GrayscaleModeToolStripMenuItem.Name = "GrayscaleModeToolStripMenuItem";
-            this.GrayscaleModeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.GrayscaleModeToolStripMenuItem.Size = new System.Drawing.Size(297, 40);
             this.GrayscaleModeToolStripMenuItem.Text = "上班模式";
             this.GrayscaleModeToolStripMenuItem.Click += new System.EventHandler(this.GrayscaleModeToolStripMenuItem_Click);
             // 
@@ -166,9 +172,10 @@ namespace mutiSGO
             // 
             // btnAutoForward1
             // 
-            this.btnAutoForward1.Location = new System.Drawing.Point(99, 28);
+            this.btnAutoForward1.Location = new System.Drawing.Point(182, 49);
+            this.btnAutoForward1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoForward1.Name = "btnAutoForward1";
-            this.btnAutoForward1.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoForward1.Size = new System.Drawing.Size(165, 40);
             this.btnAutoForward1.TabIndex = 8;
             this.btnAutoForward1.Text = "自動趕路";
             this.btnAutoForward1.UseVisualStyleBackColor = true;
@@ -176,9 +183,10 @@ namespace mutiSGO
             // 
             // btnAutoForward2
             // 
-            this.btnAutoForward2.Location = new System.Drawing.Point(473, 28);
+            this.btnAutoForward2.Location = new System.Drawing.Point(867, 49);
+            this.btnAutoForward2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoForward2.Name = "btnAutoForward2";
-            this.btnAutoForward2.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoForward2.Size = new System.Drawing.Size(165, 40);
             this.btnAutoForward2.TabIndex = 9;
             this.btnAutoForward2.Text = "自動趕路";
             this.btnAutoForward2.UseVisualStyleBackColor = true;
@@ -186,9 +194,10 @@ namespace mutiSGO
             // 
             // btnStopAuto1
             // 
-            this.btnStopAuto1.Location = new System.Drawing.Point(195, 28);
+            this.btnStopAuto1.Location = new System.Drawing.Point(358, 49);
+            this.btnStopAuto1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnStopAuto1.Name = "btnStopAuto1";
-            this.btnStopAuto1.Size = new System.Drawing.Size(90, 23);
+            this.btnStopAuto1.Size = new System.Drawing.Size(165, 40);
             this.btnStopAuto1.TabIndex = 10;
             this.btnStopAuto1.Text = "停止自動";
             this.btnStopAuto1.UseVisualStyleBackColor = true;
@@ -196,9 +205,10 @@ namespace mutiSGO
             // 
             // btnStopAuto2
             // 
-            this.btnStopAuto2.Location = new System.Drawing.Point(569, 28);
+            this.btnStopAuto2.Location = new System.Drawing.Point(1043, 49);
+            this.btnStopAuto2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnStopAuto2.Name = "btnStopAuto2";
-            this.btnStopAuto2.Size = new System.Drawing.Size(90, 23);
+            this.btnStopAuto2.Size = new System.Drawing.Size(165, 40);
             this.btnStopAuto2.TabIndex = 11;
             this.btnStopAuto2.Text = "停止自動";
             this.btnStopAuto2.UseVisualStyleBackColor = true;
@@ -206,9 +216,9 @@ namespace mutiSGO
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 801);
+            this.ClientSize = new System.Drawing.Size(1723, 1402);
             this.Controls.Add(this.btnStopAuto2);
             this.Controls.Add(this.btnStopAuto1);
             this.Controls.Add(this.btnAutoForward2);
@@ -222,8 +232,9 @@ namespace mutiSGO
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
-            this.Text = "mutiSGO v0.2";
+            this.Text = "mutiSGO v0.5";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
