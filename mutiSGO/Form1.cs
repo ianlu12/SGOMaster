@@ -16,6 +16,7 @@ namespace mutiSGO
         public int slot = 2;
         public string UITweakScript = File.ReadAllText(@".\script.js");
         public string autoFight = "setInterval(function(){var hp=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(document.getElementsByClassName('css-1riv80w') [0].childNodes[1].childNodes[1].data == '（可完成）'){document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();}if(power > 120 && hp >120){document.getElementsByClassName('css-1myfyhp')[0].children[1].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);";
+        public string autoForward = "setInterval(function(){var hp=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);var power=parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);if(document.getElementsByClassName('css-1riv80w') [0].childNodes[1].childNodes[1].data == '（可完成）'){document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();}if(power > 120 && hp >120){document.getElementsByClassName('css-1myfyhp')[0].children[0].click();}else{document.getElementsByClassName('css-1myfyhp')[0].children[2].click();};},11000);";
         public Form1()
         {
             InitializeComponent();
@@ -52,26 +53,30 @@ namespace mutiSGO
             this.webView21.Width = viewWidth;
             webView22.Left = this.webView21.Right + 5;
             this.webView22.Width = viewWidth;
-            button3.Left = this.webView22.Left;
-            button4.Left = button3.Right + 5;
+            btnAutoFight2.Left = this.webView22.Left;
+            btnAutoForward2.Left = btnAutoFight2.Right + 5;
+            btnStopAuto2.Left = btnAutoForward2.Right + 5;
+            btnLogout2.Left = btnStopAuto2.Right + 5;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            if (button1.Enabled)
+            if (btnAutoFight1.Enabled)
             {
                 await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
             }
-            button1.Enabled = false;
+            btnAutoFight1.Enabled = false;
+            btnAutoForward1.Enabled = false;
         }
 
         private async void button3_Click(object sender, EventArgs e)
         {
-            if (button3.Enabled)
+            if (btnAutoFight2.Enabled)
             {
                 await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
             }
-            button3.Enabled = false;
+            btnAutoFight2.Enabled = false;
+            btnAutoForward2.Enabled = false;
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -94,10 +99,9 @@ namespace mutiSGO
             {
                 webView21.CoreWebView2.ExecuteScriptAsync(@"document.getElementsByTagName('html')[0].style.filter = 'invert(1) grayscale(1)';");
             }
-            if (!button1.Enabled)
-            {
-                button1.Enabled = true;
-            }
+            btnAutoFight1.Enabled = true;
+            btnAutoForward1.Enabled = true;
+
 
         }
 
@@ -111,10 +115,8 @@ namespace mutiSGO
             {
                 webView22.CoreWebView2.ExecuteScriptAsync(@"document.getElementsByTagName('html')[0].style.filter = 'invert(1) grayscale(1)';");
             }
-            if (!button3.Enabled)
-            {
-                button3.Enabled = true;
-            }
+            btnAutoFight2.Enabled = true;
+            btnAutoForward2.Enabled = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -144,6 +146,37 @@ namespace mutiSGO
             GrayscaleModeToolStripMenuItem.Checked = !GrayscaleModeToolStripMenuItem.Checked;
             webView21.Reload();
             webView22.Reload();
+        }
+
+        private async void button5_Click(object sender, EventArgs e)
+        {
+            await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForward);
+            btnAutoFight1.Enabled = false;
+            btnAutoForward1.Enabled = false;
+        }
+
+        private async void button6_Click(object sender, EventArgs e)
+        {
+            await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForward);
+            btnAutoFight2.Enabled = false;
+            btnAutoForward2.Enabled = false;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            webView21.Reload();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            webView22.Reload();
+        }
+        public void EnabledAutoButton()
+        {
+            btnAutoFight1.Enabled = true;
+            btnAutoFight2.Enabled = true;
+            btnAutoForward1.Enabled = true;
+            btnAutoForward2.Enabled = true;
         }
     }
 }

@@ -31,17 +31,21 @@ namespace mutiSGO
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnAutoFight1 = new System.Windows.Forms.Button();
+            this.btnLogout1 = new System.Windows.Forms.Button();
+            this.btnAutoFight2 = new System.Windows.Forms.Button();
             this.webView22 = new Microsoft.Web.WebView2.WinForms.WebView2();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLogout2 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.SettingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UITweakToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GrayscaleModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.teToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAutoForward1 = new System.Windows.Forms.Button();
+            this.btnAutoForward2 = new System.Windows.Forms.Button();
+            this.btnStopAuto1 = new System.Windows.Forms.Button();
+            this.btnStopAuto2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webView22)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -52,70 +56,64 @@ namespace mutiSGO
             this.webView21.AllowExternalDrop = true;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Location = new System.Drawing.Point(4, 65);
-            this.webView21.Margin = new System.Windows.Forms.Padding(4);
+            this.webView21.Location = new System.Drawing.Point(3, 52);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(491, 769);
+            this.webView21.Size = new System.Drawing.Size(368, 615);
             this.webView21.TabIndex = 0;
             this.webView21.ZoomFactor = 1D;
             this.webView21.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView21_NavigationCompleted);
             // 
-            // button1
+            // btnAutoFight1
             // 
-            this.button1.Location = new System.Drawing.Point(4, 35);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "自動戰鬥休息";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAutoFight1.Location = new System.Drawing.Point(3, 28);
+            this.btnAutoFight1.Name = "btnAutoFight1";
+            this.btnAutoFight1.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoFight1.TabIndex = 2;
+            this.btnAutoFight1.Text = "自動戰鬥";
+            this.btnAutoFight1.UseVisualStyleBackColor = true;
+            this.btnAutoFight1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnLogout1
             // 
-            this.button2.Location = new System.Drawing.Point(132, 35);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "登出";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnLogout1.Location = new System.Drawing.Point(291, 28);
+            this.btnLogout1.Name = "btnLogout1";
+            this.btnLogout1.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout1.TabIndex = 3;
+            this.btnLogout1.Text = "登出";
+            this.btnLogout1.UseVisualStyleBackColor = true;
+            this.btnLogout1.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnAutoFight2
             // 
-            this.button3.Location = new System.Drawing.Point(503, 35);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 29);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "自動戰鬥休息";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnAutoFight2.Location = new System.Drawing.Point(377, 28);
+            this.btnAutoFight2.Name = "btnAutoFight2";
+            this.btnAutoFight2.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoFight2.TabIndex = 4;
+            this.btnAutoFight2.Text = "自動戰鬥";
+            this.btnAutoFight2.UseVisualStyleBackColor = true;
+            this.btnAutoFight2.Click += new System.EventHandler(this.button3_Click);
             // 
             // webView22
             // 
             this.webView22.AllowExternalDrop = true;
             this.webView22.CreationProperties = null;
             this.webView22.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView22.Location = new System.Drawing.Point(503, 65);
-            this.webView22.Margin = new System.Windows.Forms.Padding(4);
+            this.webView22.Location = new System.Drawing.Point(377, 52);
             this.webView22.Name = "webView22";
-            this.webView22.Size = new System.Drawing.Size(491, 769);
+            this.webView22.Size = new System.Drawing.Size(368, 615);
             this.webView22.TabIndex = 5;
             this.webView22.ZoomFactor = 1D;
             this.webView22.NavigationCompleted += new System.EventHandler<Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs>(this.webView22_NavigationCompleted);
             // 
-            // button4
+            // btnLogout2
             // 
-            this.button4.Location = new System.Drawing.Point(631, 35);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 29);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "登出";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnLogout2.Location = new System.Drawing.Point(665, 28);
+            this.btnLogout2.Name = "btnLogout2";
+            this.btnLogout2.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout2.TabIndex = 6;
+            this.btnLogout2.Text = "登出";
+            this.btnLogout2.UseVisualStyleBackColor = true;
+            this.btnLogout2.Click += new System.EventHandler(this.button4_Click);
             // 
             // menuStrip1
             // 
@@ -124,7 +122,8 @@ namespace mutiSGO
             this.SettingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1253, 27);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(940, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -134,7 +133,7 @@ namespace mutiSGO
             this.UITweakToolStripMenuItem,
             this.GrayscaleModeToolStripMenuItem});
             this.SettingToolStripMenuItem.Name = "SettingToolStripMenuItem";
-            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
+            this.SettingToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.SettingToolStripMenuItem.Text = "設定";
             // 
             // UITweakToolStripMenuItem
@@ -142,14 +141,14 @@ namespace mutiSGO
             this.UITweakToolStripMenuItem.Checked = true;
             this.UITweakToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UITweakToolStripMenuItem.Name = "UITweakToolStripMenuItem";
-            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.UITweakToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.UITweakToolStripMenuItem.Text = "啟用介面優化插件";
             this.UITweakToolStripMenuItem.Click += new System.EventHandler(this.UITweakToolStripMenuItem_Click);
             // 
             // GrayscaleModeToolStripMenuItem
             // 
             this.GrayscaleModeToolStripMenuItem.Name = "GrayscaleModeToolStripMenuItem";
-            this.GrayscaleModeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.GrayscaleModeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.GrayscaleModeToolStripMenuItem.Text = "上班模式";
             this.GrayscaleModeToolStripMenuItem.Click += new System.EventHandler(this.GrayscaleModeToolStripMenuItem_Click);
             // 
@@ -165,21 +164,64 @@ namespace mutiSGO
             this.teToolStripMenuItem.Name = "teToolStripMenuItem";
             this.teToolStripMenuItem.Size = new System.Drawing.Size(32, 19);
             // 
+            // btnAutoForward1
+            // 
+            this.btnAutoForward1.Location = new System.Drawing.Point(99, 28);
+            this.btnAutoForward1.Name = "btnAutoForward1";
+            this.btnAutoForward1.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoForward1.TabIndex = 8;
+            this.btnAutoForward1.Text = "自動趕路";
+            this.btnAutoForward1.UseVisualStyleBackColor = true;
+            this.btnAutoForward1.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnAutoForward2
+            // 
+            this.btnAutoForward2.Location = new System.Drawing.Point(473, 28);
+            this.btnAutoForward2.Name = "btnAutoForward2";
+            this.btnAutoForward2.Size = new System.Drawing.Size(90, 23);
+            this.btnAutoForward2.TabIndex = 9;
+            this.btnAutoForward2.Text = "自動趕路";
+            this.btnAutoForward2.UseVisualStyleBackColor = true;
+            this.btnAutoForward2.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btnStopAuto1
+            // 
+            this.btnStopAuto1.Location = new System.Drawing.Point(195, 28);
+            this.btnStopAuto1.Name = "btnStopAuto1";
+            this.btnStopAuto1.Size = new System.Drawing.Size(90, 23);
+            this.btnStopAuto1.TabIndex = 10;
+            this.btnStopAuto1.Text = "停止自動";
+            this.btnStopAuto1.UseVisualStyleBackColor = true;
+            this.btnStopAuto1.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnStopAuto2
+            // 
+            this.btnStopAuto2.Location = new System.Drawing.Point(569, 28);
+            this.btnStopAuto2.Name = "btnStopAuto2";
+            this.btnStopAuto2.Size = new System.Drawing.Size(90, 23);
+            this.btnStopAuto2.TabIndex = 11;
+            this.btnStopAuto2.Text = "停止自動";
+            this.btnStopAuto2.UseVisualStyleBackColor = true;
+            this.btnStopAuto2.Click += new System.EventHandler(this.button8_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 1001);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(940, 801);
+            this.Controls.Add(this.btnStopAuto2);
+            this.Controls.Add(this.btnStopAuto1);
+            this.Controls.Add(this.btnAutoForward2);
+            this.Controls.Add(this.btnAutoForward1);
+            this.Controls.Add(this.btnLogout2);
             this.Controls.Add(this.webView22);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAutoFight2);
+            this.Controls.Add(this.btnLogout1);
+            this.Controls.Add(this.btnAutoFight1);
             this.Controls.Add(this.webView21);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "mutiSGO v0.2";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -196,17 +238,21 @@ namespace mutiSGO
         #endregion
 
         private Microsoft.Web.WebView2.WinForms.WebView2 webView21;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAutoFight1;
+        private System.Windows.Forms.Button btnLogout1;
+        private System.Windows.Forms.Button btnAutoFight2;
         private Microsoft.Web.WebView2.WinForms.WebView2 webView22;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLogout2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem UITweakToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SettingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem teToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem GrayscaleModeToolStripMenuItem;
+        private System.Windows.Forms.Button btnAutoForward1;
+        private System.Windows.Forms.Button btnAutoForward2;
+        private System.Windows.Forms.Button btnStopAuto1;
+        private System.Windows.Forms.Button btnStopAuto2;
     }
 }
 
