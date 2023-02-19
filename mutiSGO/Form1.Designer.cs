@@ -235,7 +235,7 @@ namespace mutiSGO
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Form1";
-            this.Text = "mutiSGO v0.6";
+            this.Text = "mutiSGO v0.7";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();

@@ -19,7 +19,7 @@ namespace mutiSGO
         public static int limitHp = 120;
         public static int limitPower = 120;
         public static int floor = 0;
-        public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitPower + "," + 5 + ")},11000)";
+        public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitPower + "," + 4 + ")},11000)";
         public string autoForward = "setInterval(function(){autoForward()},11000);";
 
         public Form1()
