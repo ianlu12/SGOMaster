@@ -6,7 +6,7 @@
    *
    */
 function autoFight(limitHp, limitPower, floor) {
-    //floor還沒寫
+   
     var status = "行動未完成";
 
     var baseUrl = "https://swordgale.online/"
@@ -34,10 +34,18 @@ function autoFight(limitHp, limitPower, floor) {
             document.getElementsByClassName('chakra-link css-1dho2qc')[1].click();
             break;
     }
+    try {
 
     //生命、體力
     var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);
     var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);
+
+     //自動出門
+    if (document.getElementsByClassName('css-bxak8j')[0].childNodes[0].childNodes[1].textContent == '起始之鎮')
+    {
+        setTimeout(function () { document.getElementsByClassName('chakra-button css-vw2zy9')[1].click(); }, 1000);
+        status = " 去大草原";
+    }
 
     //完成移動
     if ((document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[0].data == '移動' &&
@@ -63,16 +71,16 @@ function autoFight(limitHp, limitPower, floor) {
         return false;
     }
 
-    ////自動出門
-    //if (document.getElementsByClassName('css-bxak8j')[0].childNodes[0].childNodes[1].textContent == '起始之鎮')
-    //{
-    //    document.getElementsByClassName('chakra-button css-vw2zy9')[0].click();
-    //    setTimeout(function () { document.getElementsByClassName('chakra-button css-vw2zy9')[1].click(); }, 1000);
-    //    status = " 去大草原";
-    //}
-
-    //到指定樓層回家
-    //dosomething
+    //超過指定樓層回家
+    var getFloor = document.getElementsByClassName('css-bxak8j')[0].childNodes[0].childNodes[3].data;
+    if (parseInt(getFloor) > parseInt(floor))
+    {
+        document.getElementsByClassName('chakra-link css-1dho2qc')[0].click();
+        setTimeout(function () { document.getElementsByClassName('css-z30qqj')[0].children[0].click(); }, 1000);
+        status = "超過" + floor+"樓層回家";
+        _log(status);
+        return false;
+    }
 
     //自動戰鬥、自動休息
     if (power > limitHp && hp > limitPower &&
@@ -94,7 +102,11 @@ function autoFight(limitHp, limitPower, floor) {
             return false;
         }
     };
-    _log(status);
+    } catch (e) {
+        _log(e);
+        _log(status);
+
+    }
 }
 
 function autoForward() {
