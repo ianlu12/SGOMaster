@@ -71,6 +71,13 @@ const restConfig = {
     headers: { 'token': localStorage.token },
 }
 
+//重生
+const revivConfig = {
+    url: 'https://api.swordgale.online/api/action/reviv',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
 /**自動戰鬥
    * @param int limitHp
    * @param int limitPower
@@ -151,6 +158,14 @@ async function autoFight(limitHp, limitSp, floor) {
             return false;
         }
 
+        //完成復活
+        if (data.actionStatusCode == "reviving" && data.canCompleteAction == true) {
+            axios(completeConfig);
+            status = "完成復活";
+            _log(status);
+            return false;
+        }
+
         //超過指定樓層回家
         var getFloor = data.huntStage;
         if (parseInt(getFloor) > parseInt(floor) &&
@@ -158,6 +173,15 @@ async function autoFight(limitHp, limitSp, floor) {
         ) {
             axios(backConfig);
             status = "超過" + floor + "樓回家";
+            _log(status);
+            return false;
+        }
+
+        //復活
+        if(data.actionStatusCode == "free" && hp == 0)
+        {
+            axios(revivConfig);
+            status = '重生';
             _log(status);
             return false;
         }
