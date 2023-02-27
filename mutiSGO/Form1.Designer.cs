@@ -245,7 +245,7 @@ namespace SGOMaster
             this.floorBox1.Name = "floorBox1";
             this.floorBox1.Size = new System.Drawing.Size(88, 29);
             this.floorBox1.TabIndex = 12;
-            this.floorBox1.Text = "1";
+            this.floorBox1.Text = "3";
             // 
             // floorBox2
             // 
@@ -275,7 +275,7 @@ namespace SGOMaster
             this.floorBox2.Name = "floorBox2";
             this.floorBox2.Size = new System.Drawing.Size(88, 29);
             this.floorBox2.TabIndex = 13;
-            this.floorBox2.Text = "1";
+            this.floorBox2.Text = "3";
             // 
             // Form1
             // 
