@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,20 +45,29 @@ namespace mutiSGO
 
 
         }
-
+        void SystemEvents_UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
+        {
+            if (e.Category == UserPreferenceCategory.Window)
+            {
+                this.Font = SystemFonts.IconTitleFont;
+                
+            }
+            WebViewResize();
+        }
         private void Form1_Resize(object sender, EventArgs e)
         {
             WebViewResize();
         }
         public void WebViewResize()
         {
-            var viewHeight = this.Height - 95;
+            var viewHeight = this.Height - this.webView21.Top - menuStrip1.Height;
             this.webView21.Height = viewHeight;
             this.webView22.Height = viewHeight;
-            var viewWidth = (this.Width - 11 * this.slot - 5 * (this.slot - 1)) / 2;
+            var viewWidth = (this.Width / this.slot);
+            webView21.Left = 0;
             this.webView21.Width = viewWidth;
-            webView22.Left = this.webView21.Right + 5;
             this.webView22.Width = viewWidth;
+            webView22.Left = webView21.Width;
             btnAutoFight2.Left = this.webView22.Left;
             btnAutoForward2.Left = btnAutoFight2.Right + 5;
             btnStopAuto2.Left = btnAutoForward2.Right + 5;
