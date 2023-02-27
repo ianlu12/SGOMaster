@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EE76B612-A655-4110-A6E1-B24E8CBD6871}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>mutiSGO</RootNamespace>
-    <AssemblyName>mutiSGO</AssemblyName>
+    <RootNamespace>SGOMaster</RootNamespace>
+    <AssemblyName>SGOMaster</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -38,7 +38,7 @@
     <ApplicationIcon>sao.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>mutiSGO.Program</StartupObject>
+    <StartupObject>SGOMaster.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>

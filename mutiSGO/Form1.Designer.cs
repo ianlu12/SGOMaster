@@ -1,5 +1,5 @@
 ﻿
-namespace mutiSGO
+namespace SGOMaster
 {
     partial class Form1
     {
@@ -235,7 +235,7 @@ namespace mutiSGO
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Form1";
-            this.Text = "mutiSGO";
+            this.Text = "SGOMaster";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).EndInit();
