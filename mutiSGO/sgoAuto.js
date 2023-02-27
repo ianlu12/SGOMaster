@@ -72,8 +72,8 @@ const restConfig = {
 }
 
 //重生
-const revivConfig = {
-    url: 'https://api.swordgale.online/api/action/reviv',
+const reviveConfig = {
+    url: 'https://api.swordgale.online/api/action/revive',
     method: 'post',
     headers: { 'token': localStorage.token },
 }
@@ -132,7 +132,7 @@ async function autoFight(limitHp, limitSp, floor) {
         var sp = data.sp;
 
         //自動出門
-        if (data.huntZone == 0 && data.actionStatusCode == "free") {
+        if (hp > 0 && data.huntZone == 0 && data.actionStatusCode == "free") {
             axios(goConfig);
             status = " 去大草原";
             _log(status);
@@ -180,7 +180,7 @@ async function autoFight(limitHp, limitSp, floor) {
         //復活
         if(data.actionStatusCode == "free" && hp == 0)
         {
-            axios(revivConfig);
+            axios(reviveConfig);
             status = '重生';
             _log(status);
             return false;
