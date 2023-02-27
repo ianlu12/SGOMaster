@@ -17,10 +17,11 @@ namespace SGOMaster
         public int slot = 2;
         public string UITweakScript = File.ReadAllText(@".\script.js");
         public string autoScript = File.ReadAllText(@".\sgoAuto.js");
+        public string axios = File.ReadAllText(@".\axios.min.js");
         public static int limitHp = 120;
-        public static int limitPower = 120;
+        public static int limitSp = 120;
         public static int floor = 0;
-        public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitPower + "," + 4 + ")},11000)";
+        //public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + 4 + ")},11000)";
         public string autoForward = "setInterval(function(){autoForward()},11000);";
 
         public Form1()
@@ -77,28 +78,31 @@ namespace SGOMaster
             btnAutoForward2.Left = btnAutoFight2.Right + 5;
             btnStopAuto2.Left = btnAutoForward2.Right + 5;
             btnLogout2.Left = btnStopAuto2.Right + 5;
+            floorBox2.Left = btnLogout2.Right + 5;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox1.Text + ")},11000)";
             if (btnAutoFight1.Enabled)
             {
-                //await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
                 await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:"+ autoFight);
-
             }
             btnAutoFight1.Enabled = false;
             btnAutoForward1.Enabled = false;
+            floorBox1.Enabled = false;
         }
 
         private async void button3_Click(object sender, EventArgs e)
         {
+            string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox2.Text + ")},11000)";
             if (btnAutoFight2.Enabled)
             {
                 await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
             }
             btnAutoFight2.Enabled = false;
             btnAutoForward2.Enabled = false;
+            floorBox2.Enabled = false;
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -113,6 +117,7 @@ namespace SGOMaster
 
         private void webView21_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            webView21.CoreWebView2.ExecuteScriptAsync(axios);
             webView21.CoreWebView2.ExecuteScriptAsync(autoScript);
             if (UITweakToolStripMenuItem.Checked)
             {
@@ -124,12 +129,12 @@ namespace SGOMaster
             }
             btnAutoFight1.Enabled = true;
             btnAutoForward1.Enabled = true;
-
-
+            floorBox1.Enabled = true;
         }
 
         private void webView22_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
         {
+            webView22.CoreWebView2.ExecuteScriptAsync(axios);
             webView22.CoreWebView2.ExecuteScriptAsync(autoScript);
             if (UITweakToolStripMenuItem.Checked)
             {
@@ -141,6 +146,7 @@ namespace SGOMaster
             }
             btnAutoFight2.Enabled = true;
             btnAutoForward2.Enabled = true;
+            floorBox2.Enabled = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -178,6 +184,7 @@ namespace SGOMaster
             await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForward);
             btnAutoFight1.Enabled = false;
             btnAutoForward1.Enabled = false;
+            floorBox1.Enabled = false;
         }
 
         private async void button6_Click(object sender, EventArgs e)
@@ -185,6 +192,7 @@ namespace SGOMaster
             await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForward);
             btnAutoFight2.Enabled = false;
             btnAutoForward2.Enabled = false;
+            floorBox2.Enabled = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -202,6 +210,8 @@ namespace SGOMaster
             btnAutoFight2.Enabled = true;
             btnAutoForward1.Enabled = true;
             btnAutoForward2.Enabled = true;
+            floorBox1.Enabled = true;
+            floorBox2.Enabled = true;
         }
     }
 }

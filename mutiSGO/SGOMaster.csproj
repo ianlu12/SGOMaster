@@ -109,6 +109,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="axios.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="script.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

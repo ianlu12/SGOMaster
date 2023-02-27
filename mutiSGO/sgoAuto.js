@@ -1,14 +1,85 @@
 ﻿
+//api confing
+
+//取得狀態
+const getProfileConfig = {
+    url: 'https://api.swordgale.online/api/profile',
+    method: 'get',
+    headers: { 'token': localStorage.token },
+};
+
+//完成行動
+const completeConfig = {
+    url: 'https://api.swordgale.online/api/action/complete',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
+//完成移動
+const zoneCompleteConfig = {
+    url: 'https://api.swordgale.online/api/zone/move/complete',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
+
+//回城
+const backConfig = {
+    url: 'https://api.swordgale.online/api/zone/move/0',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
+//出門 (大草原)
+const goConfig = {
+    url: 'https://api.swordgale.online/api/zone/move/1',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
+
+//戰鬥-hunt
+const huntConfig = {
+    url: 'https://api.swordgale.online/api/hunt',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+    data: { 'type': 1 }
+}
+//戰鬥-team
+const teamConfig = {
+    url: 'https://api.swordgale.online/api/team',
+    method: 'get',
+    headers: { 'token': localStorage.token },
+}
+//戰鬥-invitations
+const invitationsConfig = {
+    url: 'https://api.swordgale.online/api/invitations',
+    method: 'get',
+    headers: { 'token': localStorage.token },
+}
+//戰鬥-info
+const infoConfig = {
+    url: 'https://api.swordgale.online/api/hunt/info',
+    method: 'get',
+    headers: { 'token': localStorage.token },
+}
+
+//休息
+const restConfig = {
+    url: 'https://api.swordgale.online/api/action/rest',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
 /**自動戰鬥
    * @param int limitHp
    * @param int limitPower
    * @param int floor
    *
    */
-function autoFight(limitHp, limitPower, floor) {
-   
-    var status = "行動未完成";
+async function autoFight(limitHp, limitSp, floor) {
 
+    var status = "行動未完成";
     var baseUrl = "https://swordgale.online/"
     var profilePage = baseUrl + "profile";
     var huntPage = baseUrl + "hunt";
@@ -18,7 +89,8 @@ function autoFight(limitHp, limitPower, floor) {
     var townPage = baseUrl + "town";
     var rankingsPage = baseUrl + "rankings";
     var reportsPage = baseUrl + "reports";
-
+    var data; //api response
+    let getNow = Date.now();
     //移到狩獵頁面
     //console.log(location.href);
     switch (location.href) {
@@ -36,72 +108,84 @@ function autoFight(limitHp, limitPower, floor) {
     }
     try {
 
-    //生命、體力
-    var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);
-    var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);
+        //call profile api
+        axios(getProfileConfig)
+            .then(function (response) {
+                data = response.data;
+            }).catch(function (error) {
+                console.log("api no response");
+                return false
+            });
 
-     //自動出門
-    if (document.getElementsByClassName('css-bxak8j')[0].childNodes[0].childNodes[1].textContent == '起始之鎮')
-    {
-        setTimeout(function () { document.getElementsByClassName('chakra-button css-vw2zy9')[1].click(); }, 1000);
-        status = " 去大草原";
-    }
+        //等待
+        await delay(1);
 
-    //完成移動
-    if ((document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[0].data == '移動' &&
-        document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '（可完成）') ||
-        (document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '移動' &&
-            document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[2].data == '（可完成）')
-    ) {
-        document.getElementsByClassName('chakra-button css-1adux0m')[0].click();
-        status = "完成移動";
-        _log(status);
-        return false;
-    }
+        //生命、體力
+        var hp = data.hp;
+        var sp = data.sp;
 
-    //完成休息 
-    if ((document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[0].data == '休息' &&
-        document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '（可完成）') ||
-        (document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '休息' &&
-            document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[2].data == '（可完成）')
-    ) {
-        document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();
-        status = "完成休息";
-        _log(status);
-        return false;
-    }
-
-    //超過指定樓層回家
-    var getFloor = document.getElementsByClassName('css-bxak8j')[0].childNodes[0].childNodes[3].data;
-    if (parseInt(getFloor) > parseInt(floor))
-    {
-        document.getElementsByClassName('chakra-link css-1dho2qc')[0].click();
-        setTimeout(function () { document.getElementsByClassName('css-z30qqj')[0].children[0].click(); }, 1000);
-        status = "超過" + floor+"樓層回家";
-        _log(status);
-        return false;
-    }
-
-    //自動戰鬥、自動休息
-    if (power > limitHp && hp > limitPower &&
-        (document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[0].data == '閒置' ||
-            document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '閒置'
-        )
-    ) {
-        document.getElementsByClassName('css-1myfyhp')[0].children[1].click();
-        status = "自動戰鬥";
-        _log(status);
-        return false;
-    } else {
-        if (document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[0].data == '閒置' ||
-            document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '閒置'
-        ) {
-            document.getElementsByClassName('css-1myfyhp')[0].children[2].click();
-            status = "自動休息"
+        //自動出門
+        if (data.huntZone == 0 && data.actionStatusCode == "free") {
+            axios(goConfig);
+            status = " 去大草原";
             _log(status);
             return false;
         }
-    };
+
+        //完成移動
+        if (typeof (data.movingCompletionTime) != "undefined" &&
+            data.actionStatusCode == "moving" &&
+            getNow > data.movingCompletionTime
+        ) {
+            axios(zoneCompleteConfig);
+            status = "完成移動";
+            _log(status);
+            return false;
+        }
+
+        //完成休息 
+        if (data.actionStatusCode == "resting" && data.canCompleteAction == true) {
+            axios(completeConfig);
+            status = "完成休息";
+            _log(status);
+            return false;
+        }
+
+        //超過指定樓層回家
+        var getFloor = data.huntStage;
+        if (parseInt(getFloor) > parseInt(floor) &&
+            data.actionStatusCode == "free"
+        ) {
+            axios(backConfig);
+            status = "超過" + floor + "樓回家";
+            _log(status);
+            return false;
+        }
+
+        //自動戰鬥、自動休息
+        if (sp > limitHp && hp > limitSp &&
+            data.actionStatusCode == "free" //&&
+            //getNow > data.canAttackTime
+        ) {
+            //調整中  還沒找到方法更新戰鬥紀錄
+            // axios(teamConfig);
+            // axios(invitationsConfig);
+            // axios(infoConfig);
+            // axios(huntConfig);
+            // axios(infoConfig);
+            // axios(teamConfig);
+            //調整中
+            document.getElementsByClassName('css-1myfyhp')[0].children[1].click();
+            status = "自動戰鬥";
+            _log(status);
+            return false;
+        } else if (data.actionStatusCode == "free") {
+            axios(restConfig);
+            status = "自動休息"
+            _log(status);
+            return false;
+        };
+        _log(status);
     } catch (e) {
         _log(e);
         _log(status);
@@ -109,19 +193,81 @@ function autoFight(limitHp, limitPower, floor) {
     }
 }
 
-function autoForward() {
+//自動趕路
+async function autoForward() {
 
-    var hp = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[0].childNodes[1].data);
-    var power = parseInt(document.getElementsByClassName('css-zad53')[0].childNodes[1].childNodes[1].data);
-    if (document.getElementsByClassName('css-1riv80w')[0].childNodes[1].childNodes[1].data == '（可完成）') {
-        document.getElementsByClassName('css-1myfyhp')[0].childNodes[3].click();
+    var status = "行動未完成";
+    var baseUrl = "https://swordgale.online/"
+    var profilePage = baseUrl + "profile";
+    var huntPage = baseUrl + "hunt";
+    var itemPage = baseUrl + "items";
+    var marketPage = baseUrl + "market";
+    var forgePage = baseUrl + "forge";
+    var townPage = baseUrl + "town";
+    var rankingsPage = baseUrl + "rankings";
+    var reportsPage = baseUrl + "reports";
+    var data; //api response
+    let getNow = Date.now();
+
+    //移到狩獵頁面
+    switch (location.href) {
+        case profilePage:
+            document.getElementsByClassName('chakra-link css-1dho2qc')[0].click();
+            break;
+        case itemPage:
+        case marketPage:
+        case forgePage:
+        case townPage:
+        case rankingsPage:
+        case reportsPage:
+            document.getElementsByClassName('chakra-link css-1dho2qc')[1].click();
+            break;
     }
-    if (power > 120 && hp > 120) {
+
+    //call profile api
+    axios(getProfileConfig)
+        .then(function (response) {
+            data = response.data;
+        }).catch(function (error) {
+            console.log("api no response");
+            return false
+        });
+    //等待
+    await delay(1);
+
+    //生命、體力
+    var hp = data.hp;
+    var sp = data.sp;
+
+    //完成休息 
+    if (data.actionStatusCode == "resting" && data.canCompleteAction == true) {
+        axios(completeConfig);
+        status = "完成休息";
+        _log(status);
+        return false;
+    }
+
+    //自動趕路、自動休息
+    if (sp > 120 && hp > 120 &&
+        data.actionStatusCode == "free"
+    ) {
         document.getElementsByClassName('css-1myfyhp')[0].children[0].click();
-    }
-    else {
-        document.getElementsByClassName('css-1myfyhp')[0].children[2].click();
+        status = "自動戰鬥";
+        _log(status);
+        return false;
+    } else if (data.actionStatusCode == "free") {
+        axios(restConfig);
+        status = "自動休息"
+        _log(status);
+        return false;
     };
+    _log(status);
+}
+
+function delay(n) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, n * 1000);
+    });
 }
 
 function _log(Msg) {
