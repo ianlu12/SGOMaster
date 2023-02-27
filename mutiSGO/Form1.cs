@@ -60,14 +60,19 @@ namespace SGOMaster
         }
         public void WebViewResize()
         {
-            var viewHeight = this.Height - this.webView21.Top - menuStrip1.Height;
+            // 取得winform畫面尺寸
+            Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
+            // 計算高度
+            var viewHeight = screenRectangle.Height - this.webView21.Top;
             this.webView21.Height = viewHeight;
             this.webView22.Height = viewHeight;
-            var viewWidth = (this.Width / this.slot);
+            // 計算寬度
+            var viewWidth = (screenRectangle.Width / this.slot);
             webView21.Left = 0;
             this.webView21.Width = viewWidth;
             this.webView22.Width = viewWidth;
             webView22.Left = webView21.Width;
+            // 計算按鈕位置
             btnAutoFight2.Left = this.webView22.Left;
             btnAutoForward2.Left = btnAutoFight2.Right + 5;
             btnStopAuto2.Left = btnAutoForward2.Right + 5;
