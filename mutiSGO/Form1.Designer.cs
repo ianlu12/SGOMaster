@@ -48,6 +48,8 @@ namespace SGOMaster
             this.btnStopAuto2 = new System.Windows.Forms.Button();
             this.floorBox1 = new System.Windows.Forms.ComboBox();
             this.floorBox2 = new System.Windows.Forms.ComboBox();
+            this.mapBox1 = new System.Windows.Forms.ComboBox();
+            this.mapBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webView22)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -90,7 +92,7 @@ namespace SGOMaster
             // 
             // btnAutoFight2
             // 
-            this.btnAutoFight2.Location = new System.Drawing.Point(791, 49);
+            this.btnAutoFight2.Location = new System.Drawing.Point(893, 49);
             this.btnAutoFight2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoFight2.Name = "btnAutoFight2";
             this.btnAutoFight2.Size = new System.Drawing.Size(165, 40);
@@ -104,7 +106,7 @@ namespace SGOMaster
             this.webView22.AllowExternalDrop = true;
             this.webView22.CreationProperties = null;
             this.webView22.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView22.Location = new System.Drawing.Point(791, 91);
+            this.webView22.Location = new System.Drawing.Point(893, 91);
             this.webView22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.webView22.Name = "webView22";
             this.webView22.Size = new System.Drawing.Size(675, 1076);
@@ -114,7 +116,7 @@ namespace SGOMaster
             // 
             // btnLogout2
             // 
-            this.btnLogout2.Location = new System.Drawing.Point(1319, 49);
+            this.btnLogout2.Location = new System.Drawing.Point(1421, 49);
             this.btnLogout2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnLogout2.Name = "btnLogout2";
             this.btnLogout2.Size = new System.Drawing.Size(138, 40);
@@ -132,7 +134,7 @@ namespace SGOMaster
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1723, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1778, 36);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -186,7 +188,7 @@ namespace SGOMaster
             // 
             // btnAutoForward2
             // 
-            this.btnAutoForward2.Location = new System.Drawing.Point(967, 49);
+            this.btnAutoForward2.Location = new System.Drawing.Point(1069, 49);
             this.btnAutoForward2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnAutoForward2.Name = "btnAutoForward2";
             this.btnAutoForward2.Size = new System.Drawing.Size(165, 40);
@@ -208,7 +210,7 @@ namespace SGOMaster
             // 
             // btnStopAuto2
             // 
-            this.btnStopAuto2.Location = new System.Drawing.Point(1143, 49);
+            this.btnStopAuto2.Location = new System.Drawing.Point(1245, 49);
             this.btnStopAuto2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.btnStopAuto2.Name = "btnStopAuto2";
             this.btnStopAuto2.Size = new System.Drawing.Size(165, 40);
@@ -241,9 +243,9 @@ namespace SGOMaster
             "18",
             "19",
             "20"});
-            this.floorBox1.Location = new System.Drawing.Point(681, 54);
+            this.floorBox1.Location = new System.Drawing.Point(830, 56);
             this.floorBox1.Name = "floorBox1";
-            this.floorBox1.Size = new System.Drawing.Size(88, 29);
+            this.floorBox1.Size = new System.Drawing.Size(48, 29);
             this.floorBox1.TabIndex = 12;
             this.floorBox1.Text = "3";
             // 
@@ -271,17 +273,43 @@ namespace SGOMaster
             "18",
             "19",
             "20"});
-            this.floorBox2.Location = new System.Drawing.Point(1466, 56);
+            this.floorBox2.Location = new System.Drawing.Point(1721, 56);
             this.floorBox2.Name = "floorBox2";
-            this.floorBox2.Size = new System.Drawing.Size(88, 29);
+            this.floorBox2.Size = new System.Drawing.Size(48, 29);
             this.floorBox2.TabIndex = 13;
             this.floorBox2.Text = "3";
+            // 
+            // mapBox1
+            // 
+            this.mapBox1.FormattingEnabled = true;
+            this.mapBox1.Items.AddRange(new object[] {
+            "大草原",
+            "猛牛原"});
+            this.mapBox1.Location = new System.Drawing.Point(681, 56);
+            this.mapBox1.Name = "mapBox1";
+            this.mapBox1.Size = new System.Drawing.Size(143, 29);
+            this.mapBox1.TabIndex = 14;
+            this.mapBox1.Text = "大草原";
+            // 
+            // mapBox2
+            // 
+            this.mapBox2.FormattingEnabled = true;
+            this.mapBox2.Items.AddRange(new object[] {
+            "大草原",
+            "猛牛原"});
+            this.mapBox2.Location = new System.Drawing.Point(1568, 56);
+            this.mapBox2.Name = "mapBox2";
+            this.mapBox2.Size = new System.Drawing.Size(143, 29);
+            this.mapBox2.TabIndex = 15;
+            this.mapBox2.Text = "大草原";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1723, 1402);
+            this.ClientSize = new System.Drawing.Size(1778, 1402);
+            this.Controls.Add(this.mapBox2);
+            this.Controls.Add(this.mapBox1);
             this.Controls.Add(this.floorBox2);
             this.Controls.Add(this.floorBox1);
             this.Controls.Add(this.btnStopAuto2);
@@ -331,6 +359,8 @@ namespace SGOMaster
         private System.Windows.Forms.Button btnStopAuto2;
         private System.Windows.Forms.ComboBox floorBox1;
         private System.Windows.Forms.ComboBox floorBox2;
+        private System.Windows.Forms.ComboBox mapBox1;
+        private System.Windows.Forms.ComboBox mapBox2;
     }
 }
 

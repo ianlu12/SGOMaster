@@ -78,12 +78,13 @@ namespace SGOMaster
             btnAutoForward2.Left = btnAutoFight2.Right + 5;
             btnStopAuto2.Left = btnAutoForward2.Right + 5;
             btnLogout2.Left = btnStopAuto2.Right + 5;
-            floorBox2.Left = btnLogout2.Right + 5;
+            mapBox2.Left = btnLogout2.Right + 5;
+            floorBox2.Left = mapBox2.Right + 5;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox1.Text + ")},11000)";
+            string autoFight = "var map = '" + mapBox1.Text + "';setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox1.Text + ")},11000)";
             if (btnAutoFight1.Enabled)
             {
                 await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:"+ autoFight);
@@ -91,11 +92,12 @@ namespace SGOMaster
             btnAutoFight1.Enabled = false;
             btnAutoForward1.Enabled = false;
             floorBox1.Enabled = false;
+            mapBox1.Enabled = false;
         }
 
         private async void button3_Click(object sender, EventArgs e)
         {
-            string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox2.Text + ")},11000)";
+            string autoFight = "var map = '" + mapBox2.Text + "';setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + floorBox2.Text + ")},11000)";
             if (btnAutoFight2.Enabled)
             {
                 await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoFight);
@@ -103,6 +105,8 @@ namespace SGOMaster
             btnAutoFight2.Enabled = false;
             btnAutoForward2.Enabled = false;
             floorBox2.Enabled = false;
+            mapBox2.Enabled = false;
+
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -130,6 +134,7 @@ namespace SGOMaster
             btnAutoFight1.Enabled = true;
             btnAutoForward1.Enabled = true;
             floorBox1.Enabled = true;
+            mapBox1.Enabled = true;
         }
 
         private void webView22_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
@@ -147,6 +152,7 @@ namespace SGOMaster
             btnAutoFight2.Enabled = true;
             btnAutoForward2.Enabled = true;
             floorBox2.Enabled = true;
+            mapBox2.Enabled = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -185,6 +191,8 @@ namespace SGOMaster
             btnAutoFight1.Enabled = false;
             btnAutoForward1.Enabled = false;
             floorBox1.Enabled = false;
+            mapBox1.Enabled = false;
+
         }
 
         private async void button6_Click(object sender, EventArgs e)
@@ -193,6 +201,8 @@ namespace SGOMaster
             btnAutoFight2.Enabled = false;
             btnAutoForward2.Enabled = false;
             floorBox2.Enabled = false;
+            mapBox2.Enabled = false;
+
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -212,6 +222,9 @@ namespace SGOMaster
             btnAutoForward2.Enabled = true;
             floorBox1.Enabled = true;
             floorBox2.Enabled = true;
+            mapBox1.Enabled = true;
+            mapBox2.Enabled = true;
+
         }
     }
 }
