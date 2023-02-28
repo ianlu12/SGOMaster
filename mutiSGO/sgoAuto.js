@@ -1,6 +1,5 @@
 ﻿
 //api confing
-
 //取得狀態
 const getProfileConfig = {
     url: 'https://api.swordgale.online/api/profile',
@@ -37,6 +36,12 @@ const goConfig = {
     headers: { 'token': localStorage.token },
 }
 
+//出門 (猛牛原)
+const go2Config = {
+    url: 'https://api.swordgale.online/api/zone/move/2',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
 
 //戰鬥-hunt
 const huntConfig = {
@@ -133,8 +138,16 @@ async function autoFight(limitHp, limitSp, floor) {
 
         //自動出門
         if (hp > 0 && data.huntZone == 0 && data.actionStatusCode == "free") {
-            axios(goConfig);
-            status = " 去大草原";
+            switch (map) {
+                case "大草原":
+                    axios(goConfig);
+                    status = " 去大草原";
+                    break;
+                case "猛牛原":
+                    axios(go2Config);
+                    status = " 去猛牛原";
+                    break;
+            }
             _log(status);
             return false;
         }
