@@ -52,7 +52,7 @@ namespace mutiSGO
         }
         public void WebViewResize()
         {
-            var viewHeight = this.Height - 95;
+            var viewHeight = this.Height - 150;
             this.webView21.Height = viewHeight;
             this.webView22.Height = viewHeight;
             var viewWidth = (this.Width - 11 * this.slot - 5 * (this.slot - 1)) / 2;
