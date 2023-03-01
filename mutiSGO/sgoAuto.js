@@ -191,15 +191,15 @@ async function autoFight(limitHp, limitSp, floor) {
         }
 
         //復活
-        if(data.actionStatusCode == "free" && hp == 0)
-        {
+        if (data.actionStatusCode == "free" && hp == 0) {
             axios(reviveConfig);
             status = '重生';
             _log(status);
             return false;
         }
 
-        //自動戰鬥、自動休息
+        var halfway = parseInt(floor) / 2
+        //自動戰鬥、自動趕路、自動休息
         if (sp > limitHp && hp > limitSp &&
             data.actionStatusCode == "free" //&&
             //getNow > data.canAttackTime
@@ -212,8 +212,13 @@ async function autoFight(limitHp, limitSp, floor) {
             // axios(infoConfig);
             // axios(teamConfig);
             //調整中
-            document.getElementsByClassName('css-1myfyhp')[0].children[1].click();
-            status = "自動戰鬥";
+            if (getFloor < halfway && parseInt(floor)>3) {
+                document.getElementsByClassName('css-1myfyhp')[0].children[0].click();
+                status = "不到指定樓層的一半,自動趕路";
+            } else {
+                document.getElementsByClassName('css-1myfyhp')[0].children[1].click();
+                status = "自動戰鬥";
+            }
             _log(status);
             return false;
         } else if (data.actionStatusCode == "free") {

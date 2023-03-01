@@ -134,7 +134,7 @@ namespace SGOMaster
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1778, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1789, 36);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -245,7 +245,7 @@ namespace SGOMaster
             "20"});
             this.floorBox1.Location = new System.Drawing.Point(830, 56);
             this.floorBox1.Name = "floorBox1";
-            this.floorBox1.Size = new System.Drawing.Size(48, 29);
+            this.floorBox1.Size = new System.Drawing.Size(62, 29);
             this.floorBox1.TabIndex = 12;
             this.floorBox1.Text = "3";
             // 
@@ -275,7 +275,7 @@ namespace SGOMaster
             "20"});
             this.floorBox2.Location = new System.Drawing.Point(1721, 56);
             this.floorBox2.Name = "floorBox2";
-            this.floorBox2.Size = new System.Drawing.Size(48, 29);
+            this.floorBox2.Size = new System.Drawing.Size(62, 29);
             this.floorBox2.TabIndex = 13;
             this.floorBox2.Text = "3";
             // 
@@ -307,7 +307,7 @@ namespace SGOMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1778, 1402);
+            this.ClientSize = new System.Drawing.Size(1789, 1402);
             this.Controls.Add(this.mapBox2);
             this.Controls.Add(this.mapBox1);
             this.Controls.Add(this.floorBox2);
