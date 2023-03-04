@@ -80,6 +80,9 @@ namespace SGOMaster
             btnLogout2.Left = btnStopAuto2.Right + 5;
             mapBox2.Left = btnLogout2.Right + 5;
             floorBox2.Left = mapBox2.Right + 5;
+            buttonForging2.Left = this.webView22.Left;
+            textBoxForging2.Left = buttonForging2.Right + 5;
+            comboBox2.Left = textBoxForging2.Right + 5;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -135,6 +138,9 @@ namespace SGOMaster
             btnAutoForward1.Enabled = true;
             floorBox1.Enabled = true;
             mapBox1.Enabled = true;
+            buttonForging1.Enabled = true;
+            textBoxForging1.Enabled = true;
+            comboBox1.Enabled = true;
         }
 
         private void webView22_NavigationCompleted(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationCompletedEventArgs e)
@@ -153,6 +159,9 @@ namespace SGOMaster
             btnAutoForward2.Enabled = true;
             floorBox2.Enabled = true;
             mapBox2.Enabled = true;
+            buttonForging2.Enabled = true;
+            textBoxForging2.Enabled = true;
+            comboBox2.Enabled = true;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -224,6 +233,44 @@ namespace SGOMaster
             floorBox2.Enabled = true;
             mapBox1.Enabled = true;
             mapBox2.Enabled = true;
+            textBoxForging1.Enabled = true;
+            comboBox1.Enabled = true;
+            buttonForging1.Enabled = true;
+            textBoxForging2.Enabled = true;
+            comboBox2.Enabled = true;
+            buttonForging2.Enabled=true;
+        }
+
+        private async void buttonForging1_Click(object sender, EventArgs e)
+        {
+            string autoForge = "var forge = '" + textBoxForging1.Text + "';var forgeType = '" + comboBox1.Text + "';setInterval(function(){autoForge()},11000)";
+            if (textBoxForging1.Enabled)
+            {
+                await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForge);
+            }
+            btnAutoFight1.Enabled = false;
+            btnAutoForward1.Enabled = false;
+            floorBox1.Enabled = false;
+            mapBox1.Enabled = false;
+            textBoxForging1.Enabled = false;
+            comboBox1.Enabled = false;
+            buttonForging1.Enabled = false;
+        }
+
+        private async void buttonForging2_Click(object sender, EventArgs e)
+        {
+            string autoForge = "var forge = '" + textBoxForging2.Text + "';var forgeType = '" + comboBox2.Text + "';setInterval(function(){autoForge()},11000)";
+            if (textBoxForging2.Enabled)
+            {
+                await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForge);
+            }
+            btnAutoFight2.Enabled = false;
+            btnAutoForward2.Enabled = false;
+            floorBox2.Enabled = false;
+            mapBox2.Enabled = false;
+            textBoxForging2.Enabled = false;
+            comboBox2.Enabled = false;
+            buttonForging2.Enabled = false;
 
         }
     }

@@ -50,6 +50,12 @@ namespace SGOMaster
             this.floorBox2 = new System.Windows.Forms.ComboBox();
             this.mapBox1 = new System.Windows.Forms.ComboBox();
             this.mapBox2 = new System.Windows.Forms.ComboBox();
+            this.buttonForging1 = new System.Windows.Forms.Button();
+            this.buttonForging2 = new System.Windows.Forms.Button();
+            this.textBoxForging1 = new System.Windows.Forms.TextBox();
+            this.textBoxForging2 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.webView22)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -60,7 +66,7 @@ namespace SGOMaster
             this.webView21.AllowExternalDrop = true;
             this.webView21.CreationProperties = null;
             this.webView21.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView21.Location = new System.Drawing.Point(6, 91);
+            this.webView21.Location = new System.Drawing.Point(6, 146);
             this.webView21.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.webView21.Name = "webView21";
             this.webView21.Size = new System.Drawing.Size(675, 1076);
@@ -106,7 +112,7 @@ namespace SGOMaster
             this.webView22.AllowExternalDrop = true;
             this.webView22.CreationProperties = null;
             this.webView22.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView22.Location = new System.Drawing.Point(893, 91);
+            this.webView22.Location = new System.Drawing.Point(893, 146);
             this.webView22.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.webView22.Name = "webView22";
             this.webView22.Size = new System.Drawing.Size(675, 1076);
@@ -303,11 +309,77 @@ namespace SGOMaster
             this.mapBox2.TabIndex = 15;
             this.mapBox2.Text = "大草原";
             // 
+            // buttonForging1
+            // 
+            this.buttonForging1.Location = new System.Drawing.Point(6, 99);
+            this.buttonForging1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonForging1.Name = "buttonForging1";
+            this.buttonForging1.Size = new System.Drawing.Size(165, 40);
+            this.buttonForging1.TabIndex = 16;
+            this.buttonForging1.Text = "自動鍛造";
+            this.buttonForging1.UseVisualStyleBackColor = true;
+            this.buttonForging1.Click += new System.EventHandler(this.buttonForging1_Click);
+            // 
+            // buttonForging2
+            // 
+            this.buttonForging2.Location = new System.Drawing.Point(893, 99);
+            this.buttonForging2.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.buttonForging2.Name = "buttonForging2";
+            this.buttonForging2.Size = new System.Drawing.Size(165, 40);
+            this.buttonForging2.TabIndex = 17;
+            this.buttonForging2.Text = "自動鍛造";
+            this.buttonForging2.UseVisualStyleBackColor = true;
+            this.buttonForging2.Click += new System.EventHandler(this.buttonForging2_Click);
+            // 
+            // textBoxForging1
+            // 
+            this.textBoxForging1.Location = new System.Drawing.Point(182, 99);
+            this.textBoxForging1.Name = "textBoxForging1";
+            this.textBoxForging1.Size = new System.Drawing.Size(113, 33);
+            this.textBoxForging1.TabIndex = 18;
+            // 
+            // textBoxForging2
+            // 
+            this.textBoxForging2.Location = new System.Drawing.Point(1067, 99);
+            this.textBoxForging2.Name = "textBoxForging2";
+            this.textBoxForging2.Size = new System.Drawing.Size(113, 33);
+            this.textBoxForging2.TabIndex = 19;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "dagger",
+            "thsword"});
+            this.comboBox1.Location = new System.Drawing.Point(311, 103);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(143, 29);
+            this.comboBox1.TabIndex = 20;
+            this.comboBox1.Text = "dagger";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "dagger",
+            "thsword"});
+            this.comboBox2.Location = new System.Drawing.Point(1197, 99);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(143, 29);
+            this.comboBox2.TabIndex = 21;
+            this.comboBox2.Text = "dagger";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1789, 1402);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.textBoxForging2);
+            this.Controls.Add(this.textBoxForging1);
+            this.Controls.Add(this.buttonForging2);
+            this.Controls.Add(this.buttonForging1);
             this.Controls.Add(this.mapBox2);
             this.Controls.Add(this.mapBox1);
             this.Controls.Add(this.floorBox2);
@@ -361,6 +433,12 @@ namespace SGOMaster
         private System.Windows.Forms.ComboBox floorBox2;
         private System.Windows.Forms.ComboBox mapBox1;
         private System.Windows.Forms.ComboBox mapBox2;
+        private System.Windows.Forms.Button buttonForging1;
+        private System.Windows.Forms.Button buttonForging2;
+        private System.Windows.Forms.TextBox textBoxForging1;
+        private System.Windows.Forms.TextBox textBoxForging2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

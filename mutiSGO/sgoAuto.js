@@ -83,6 +83,21 @@ const reviveConfig = {
     headers: { 'token': localStorage.token },
 }
 
+//鍛造
+//完成鍛造
+const forgeCompleteConfig = {
+    url: 'https://api.swordgale.online/api/forge/complete',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
+//開始鍛造
+const forgeConfig = {
+    url: 'https://api.swordgale.online/api/forge',
+    method: 'post',
+    headers: { 'token': localStorage.token },
+}
+
 /**自動戰鬥
    * @param int limitHp
    * @param int limitPower
@@ -212,7 +227,7 @@ async function autoFight(limitHp, limitSp, floor) {
             // axios(infoConfig);
             // axios(teamConfig);
             //調整中
-            if (getFloor < halfway && parseInt(floor)>3) {
+            if (getFloor < halfway && parseInt(floor) > 3) {
                 document.getElementsByClassName('css-1myfyhp')[0].children[0].click();
                 status = "不到指定樓層的一半,自動趕路";
             } else {
@@ -304,6 +319,66 @@ async function autoForward() {
         return false;
     };
     _log(status);
+}
+
+async function autoForge() {
+
+    //432419:石頭 
+    //427439:嫩寶殼
+    //432422:鐵
+
+    //call profile api
+    axios(getProfileConfig)
+        .then(function (response) {
+            data = response.data;
+        }).catch(function (error) {
+            console.log("api no response");
+            return false
+        });
+    //等待
+    await delay(1);
+
+    //生命、體力
+    var hp = data.hp;
+    var sp = data.sp;
+    var getNow = Date.now();
+    var status = "鍛造中";
+
+    //完成鍛造
+    if (typeof (data.forgingCompletionTime) != "undefined" &&
+        data.actionStatusCode == "forging" &&
+        getNow > data.forgingCompletionTime
+    ) {
+        axios(forgeCompleteConfig);
+        status = "完成鍛造";
+        _log(status);
+        return false;
+    }
+    // axios#put(url[, data[, config]])
+    if (data.actionStatusCode == "free") {
+        axios(
+            {
+                method:"post",
+                url: "https://api.swordgale.online/api/forge",
+                data: {
+                    equipmentName: forge,
+                    selected: [{
+                        id: 427439,
+                        quantity: 15
+                    },{
+                        id: 432422,
+                        quantity: 9
+                    }],
+                    type:forgeType
+                },
+                headers:{ 'token': localStorage.token },
+            });
+        status = "開始鍛造," + forgeType;
+        _log(status);
+        return false;
+    }
+    _log(status);
+
 }
 
 function delay(n) {
