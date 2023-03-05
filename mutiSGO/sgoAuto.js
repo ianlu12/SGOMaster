@@ -326,6 +326,8 @@ async function autoForge() {
     //432419:石頭 
     //427439:嫩寶殼
     //432422:鐵
+    //450579:S兔皮
+    //492906:山豬獠牙
 
     //call profile api
     axios(getProfileConfig)
@@ -363,11 +365,8 @@ async function autoForge() {
                 data: {
                     equipmentName: forge,
                     selected: [{
-                        id: 427439,
-                        quantity: 15
-                    },{
-                        id: 432422,
-                        quantity: 9
+                        id: 492906,
+                        quantity: 21
                     }],
                     type:forgeType
                 },
