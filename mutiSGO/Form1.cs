@@ -24,6 +24,8 @@ namespace SGOMaster
         //public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + 4 + ")},11000)";
         public string autoForward = "setInterval(function(){autoForward()},11000);";
 
+        WeaponClass weaponLib = new WeaponClass();
+
         public Form1()
         {
             InitializeComponent();
@@ -243,7 +245,8 @@ namespace SGOMaster
 
         private async void buttonForging1_Click(object sender, EventArgs e)
         {
-            string autoForge = "var forge = '" + textBoxForging1.Text + "';var forgeType = '" + comboBox1.Text + "';setInterval(function(){autoForge()},11000)";
+            string weaponEN = weaponLib.GetWeaponEN(comboBox1.Text);
+            string autoForge = "var forge = '" + textBoxForging1.Text + "';var forgeType = '" + weaponEN + "';setInterval(function(){autoForge()},11000)";
             if (textBoxForging1.Enabled)
             {
                 await webView21.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForge);
@@ -259,7 +262,8 @@ namespace SGOMaster
 
         private async void buttonForging2_Click(object sender, EventArgs e)
         {
-            string autoForge = "var forge = '" + textBoxForging2.Text + "';var forgeType = '" + comboBox2.Text + "';setInterval(function(){autoForge()},11000)";
+            string weaponEN = weaponLib.GetWeaponEN(comboBox1.Text);
+            string autoForge = "var forge = '" + textBoxForging2.Text + "';var forgeType = '" + weaponEN + "';setInterval(function(){autoForge()},11000)";
             if (textBoxForging2.Enabled)
             {
                 await webView22.CoreWebView2.ExecuteScriptAsync(@"javascript:" + autoForge);

@@ -349,29 +349,43 @@ namespace SGOMaster
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "dagger",
-            "thsword",
-            "coat",
-            "katana"});
+            "單手劍",
+            "細劍",
+            "短刀",
+            "單手錘",
+            "盾牌",
+            "雙手劍",
+            "太刀",
+            "雙手斧",
+            "長槍",
+            "大衣",
+            "盔甲"});
             this.comboBox1.Location = new System.Drawing.Point(311, 103);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 29);
             this.comboBox1.TabIndex = 20;
-            this.comboBox1.Text = "dagger";
+            this.comboBox1.Text = "單手劍";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "dagger",
-            "thsword",
-            "coat",
-            "katana"});
+            "單手劍",
+            "細劍",
+            "短刀",
+            "單手錘",
+            "盾牌",
+            "雙手劍",
+            "太刀",
+            "雙手斧",
+            "長槍",
+            "大衣",
+            "盔甲"});
             this.comboBox2.Location = new System.Drawing.Point(1197, 99);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(143, 29);
             this.comboBox2.TabIndex = 21;
-            this.comboBox2.Text = "dagger";
+            this.comboBox2.Text = "單手劍";
             // 
             // Form1
             // 
