@@ -18,8 +18,8 @@ namespace SGOMaster
         public string UITweakScript = File.ReadAllText(@".\script.js");
         public string autoScript = File.ReadAllText(@".\sgoAuto.js");
         public string axios = File.ReadAllText(@".\axios.min.js");
-        public static int limitHp = 120;
-        public static int limitSp = 120;
+        public static int limitHp = 150;
+        public static int limitSp = 150;
         public static int floor = 0;
         //public string autoFight = "setInterval(function(){autoFight(" + limitHp + "," + limitSp + "," + 4 + ")},11000)";
         public string autoForward = "setInterval(function(){autoForward()},11000);";

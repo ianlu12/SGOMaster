@@ -215,7 +215,7 @@ async function autoFight(limitHp, limitSp, floor) {
 
         var halfway = parseInt(floor) / 2
         //自動戰鬥、自動趕路、自動休息
-        if (sp > limitHp && hp > limitSp &&
+        if (hp > limitHp && sp > limitSp &&
             data.actionStatusCode == "free" //&&
             //getNow > data.canAttackTime
         ) {
@@ -323,11 +323,6 @@ async function autoForward() {
 
 async function autoForge() {
 
-    //432419:石頭 
-    //427439:嫩寶殼
-    //432422:鐵
-    //450579:S兔皮
-    //492906:山豬獠牙
 
     //call profile api
     axios(getProfileConfig)
